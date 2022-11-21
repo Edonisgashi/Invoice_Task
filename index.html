@@ -15,36 +15,53 @@
   </head>
 
   <body>
+    <div class="alert alert-danger d-none" role="alert">
+      Check your information .
+    </div>
     <div class="container d-flex justify-content-around">
-      <table
-        class="table table-hover mx-5 my-5 table-bordered w-50 d-none table-striped table-dark"
-      >
-        <thead class="thead-dark">
-          <tr>
-            <th>Product's name</th>
-            <th>Qty</th>
-            <th>Price</th>
-            <th>Discount</th>
-            <th>VAT</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-        <tfoot class="d-none">
-          <tr>
-            <td colspan="5">Subtotal</td>
-            <td class="subtotal"></td>
-          </tr>
-          <tr>
-            <td colspan="5">VAT</td>
-            <td class="totalVAT"></td>
-          </tr>
-          <tr>
-            <td colspan="5">Total</td>
-            <td class="total"></td>
-          </tr>
-        </tfoot>
-      </table>
+      <div class="table__container">
+        <table
+          class="table table-hover mx-5 my-5 table-bordered d-none table-striped table-dark"
+        >
+          <thead class="thead-dark">
+            <tr>
+              <th>Product's name</th>
+              <th>Qty</th>
+              <th>Price</th>
+              <th>Discount</th>
+              <th>VAT</th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <template id="table__content">
+            <tbody>
+              <tr class="table__row">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </template>
+          <tfoot>
+            <tr>
+              <td colspan="5">Subtotal</td>
+              <td class="subtotal"></td>
+            </tr>
+            <tr>
+              <td colspan="5">VAT</td>
+              <td class="totalVAT"></td>
+            </tr>
+            <tr>
+              <td colspan="5">Total</td>
+              <td class="total"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
       <form action="" class="form-group d-flex flex-column mx-5 w-25">
         <h3 class="text-muted mt-4 mb-4">Add your product here ...</h3>
         <label for="name" class="mb-2">Product's name</label>
@@ -90,7 +107,9 @@
           name="VAT"
           class="mb-3 form-control"
         />
-        <button class="btn btn-primary">Add product</button>
+        <button class="btn btn-outline-success rounded-bottom rounded-top">
+          Add product
+        </button>
       </form>
     </div>
 
